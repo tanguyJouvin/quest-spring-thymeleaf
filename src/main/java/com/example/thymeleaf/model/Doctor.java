@@ -1,12 +1,9 @@
 package com.example.thymeleaf.model;
 
-class Doctor {
+public class Doctor {
 
     private int number;
     private String name;
-
-    public Doctor() {
-    }
 
     public Doctor(int number, String name) {
         this.number = number;

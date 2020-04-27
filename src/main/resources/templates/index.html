@@ -12,8 +12,15 @@
         <a href="/">Sign In</a>
     </nav>
 </header>
-<ul class="doctor-list">
-    <li><a href="/doctor/?number=1&name=William%20Hartnell">Doctor 1</a></li>
+<ul class="doctor-list" th:each="doctor : ${doctor}">
+   
+        <li th:text="${doctor.name}">Name</li>
+        <li th:text="${food.number}">Calories</li>
+ 
+  
+        <!-- <li><a th:href="@{/doctor(number=${doctor.number},name=${doctor.name})}"></a>Name</li> -->
+<!--   
+    <li><a th:href="/doctor/?number=1&name=William%20Hartnell">Doctor 1</a></li>
     <li><a href="/doctor/?number=2&name=Patrick%20Troughton">Doctor 2</a></li>
     <li><a href="/doctor/?number=3&name=Jon%20Pertwee">Doctor 3</a></li>
     <li><a href="/doctor/?number=4&name=Tom%20Baker">Doctor 4</a></li>
@@ -26,7 +33,7 @@
     <li><a href="/doctor/?number=11&name=Matt%20Smith">Doctor 11</a></li>
     <li><a href="/doctor/?number=12&name=Peter%20Capaldi">Doctor 12</a></li>
     <li><a href="/doctor/?number=13&name=Jodie%20Whittaker">Doctor 13</a></li>
-    <li><a href="/doctor/">Unknown Doctor</a></li>
+    <li><a href="/doctor/">Unknown Doctor</a></li> -->
 </ul>
 <footer th:fragment="bottom">
     <ul>

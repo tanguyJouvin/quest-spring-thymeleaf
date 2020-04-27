@@ -8,8 +8,8 @@
 <body>
 <header th:replace="index.html :: top">Header TODO</header>
 <section>
-    <h1 th:text="${name}">Welcome $doctorname</h1>
-    <h3 th:text="${number}">Your number is $doctornumber</h3>
+    <h1 th:text="|Welcome ${name}|">Welcome $doctorname</h1>
+    <h3 th:text="| Your number is  ${number}|">Your number is $doctornumber</h3>
 </section>
 <footer th:replace="index.html :: bottom">Footer TODO</footer>
 </body>
