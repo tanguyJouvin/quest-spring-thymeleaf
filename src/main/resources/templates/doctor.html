@@ -7,11 +7,9 @@
 </head>
 <body>
 <header th:replace="index.html :: header">Header TODO</header>
-section>
-    <ul th:each="doctor : ${doctor}">
-        <li><h1 th:text="| Welcome ${doctor.name}|">Welcome $doctorname</h1></li>
-        <li><h3 th:text="|Your number is ${doctor.number}|">Your number is $doctornumber</h3></li>
-    </ul>
+<section>
+    <h1 th:text="|Welcome ${name}|">Welcome $doctorname</h1>
+    <h3 th:text="|Your number is ${number}|">Your number is $doctornumber</h3>
 </section>
 <footer th:replace="index.html :: footer">Footer TODO</footer>
 </body>
