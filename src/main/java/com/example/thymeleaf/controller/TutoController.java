@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class TutoController {
 
-  @GetMapping({ "/hello", "/hello/{name}" })
+  @GetMapping({ "/h", "/hello/{name}" })
     public String index(Model model, @RequestParam(value="name", required=false, defaultValue="world") @PathVariable  String name) {
 
       Food cassoulet = new Food("cassoulet", 128);

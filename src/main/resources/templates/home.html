@@ -8,7 +8,7 @@
 <body>
   <h1 class="hello-title" th:text="|Hello ${name}|">Hello World !</h1>
   <ul th:each="lunch : ${lunch}">
-    <li th:text="${lunch.name}">Name</li>
+    <li> <a th:href="@{/hello(name=${lunch.name},calories=${lunch.calories})}">name</a></li>
     <li th:text="${lunch.calories}">Calories</li>
   </ul>
 </body>

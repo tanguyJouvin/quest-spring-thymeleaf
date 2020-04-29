@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DoctorController {
 
-    @GetMapping({"/doctor/", "/doctor/{number}/{name}"})
+
+    @GetMapping("/")
     public String doctor(Model model, @RequestParam(value="number", required=false, defaultValue="0") @PathVariable int number,
                          @RequestParam(value="name", required=false, defaultValue="John Smith") @PathVariable String name) {
-
         Doctor doctor1 = new Doctor(1, "William Hartnell");
         Doctor doctor2 = new Doctor(2, "Patrick Troughton");
         Doctor doctor3 = new Doctor(3, "Jon Pertwee");
@@ -29,9 +29,9 @@ public class DoctorController {
         Doctor doctor11 = new Doctor(11, "Matt Smith");
         Doctor doctor12 = new Doctor(12, "Peter Capaldi");
         Doctor doctor13 = new Doctor(13, "Jodie Whittaker");
-    
+
         ArrayList<Doctor> doctor = new ArrayList<>();
-    
+
         doctor.add(doctor1);
         doctor.add(doctor2);
         doctor.add(doctor3);
@@ -49,9 +49,17 @@ public class DoctorController {
         model.addAttribute("doctor", doctor);
         model.addAttribute("name", name);
         model.addAttribute("number", number);
-
-        return "index";
+      return "index";
     }
+
+    @GetMapping("/doctor/{name}/{number}")
+    public String visitDoctorPage(Model model, @RequestParam(value="number", required=false, defaultValue="0") @PathVariable int number,
+    @RequestParam(value="name", required=false, defaultValue="John Smith") @PathVariable String name){
+        model.addAttribute("name", name);
+        model.addAttribute("number", number);
+        return"doctor";
+    }
+
 
     @GetMapping("/twitter")
     @ResponseBody
