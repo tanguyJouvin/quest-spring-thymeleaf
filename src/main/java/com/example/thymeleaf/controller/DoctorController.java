@@ -7,11 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class DoctorController {
 
-    @GetMapping({"/doctor/","/doctor/{number}/{name}"})
+    @GetMapping({"/doctor/", "/doctor/{number}/{name}"})
     public String doctor(Model model, @RequestParam(value="number", required=false, defaultValue="0") @PathVariable int number,
                          @RequestParam(value="name", required=false, defaultValue="John Smith") @PathVariable String name) {
 
@@ -50,6 +51,22 @@ public class DoctorController {
         model.addAttribute("number", number);
 
         return "index";
+    }
+
+    @GetMapping("/twitter")
+    @ResponseBody
+    public String twitter() {
+        return "twitter";
+    }
+    @GetMapping("/facebook")
+    @ResponseBody
+    public String facebook() {
+        return "facebook";
+    }
+    @GetMapping("/tardis")
+    @ResponseBody
+    public String tardis() {
+        return "tardis";
     }
 }
 

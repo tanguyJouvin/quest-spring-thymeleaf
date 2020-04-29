@@ -13,12 +13,9 @@
     </nav>
 </header>
 <ul class="doctor-list" th:each="doctor : ${doctor}">
-   
+        <li th:text="${doctor.number}">Calories</li>
         <li th:text="${doctor.name}">Name</li>
-        <li th:text="${food.number}">Calories</li>
- 
-  
-        <!-- <li><a th:href="@{/doctor(number=${doctor.number},name=${doctor.name})}"></a>Name</li> -->
+        <li><a th:href="@{/doctor(number=${doctor.number},name=${doctor.name})}"></a>Name</li> 
 <!--   
     <li><a th:href="/doctor/?number=1&name=William%20Hartnell">Doctor 1</a></li>
     <li><a href="/doctor/?number=2&name=Patrick%20Troughton">Doctor 2</a></li>
@@ -37,9 +34,9 @@
 </ul>
 <footer th:fragment="bottom">
     <ul>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">TARDIS</a></li>
+        <li><a th:href="@{/twitter}">Twitter</a></li>
+        <li><a th:href="@{/facebook}">Facebook</a></li>
+        <li><a th:href="@{/tardis}">TARDIS</a></li>
     </ul>
     <span>Copyright BBC/Terry Nation 1963</span>
 </footer>
